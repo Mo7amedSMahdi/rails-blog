@@ -3,8 +3,10 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'author_id'
   has_many :likes, foreign_key: 'author_id'
 
-  # returns an array of 3 most recent posts
-  def three_most_recent_posts
-    Post.where(author_id: id).order(created_at: :desc).limit(3)
+  validates :name, presence: true
+  validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }, numericality: true
+
+  def self.three_most_recent_posts(author_id)
+    Post.where(author_id:).order(created_at: :desc).limit(3).all
   end
 end
