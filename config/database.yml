@@ -30,6 +30,8 @@ development:
 test:
   <<: *default
   database: rails_blog_test
+  username: postgres
+  password: 1993
 
 production:
   <<: *default
