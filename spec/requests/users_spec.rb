@@ -6,9 +6,9 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /users' do
-    before {get users_path}
+    before { get users_path }
     it 'returns a 200 status code' do
-      expect(response).to have_http_status(200) 
+      expect(response).to have_http_status(200)
     end
 
     it 'Should render index template' do
@@ -20,10 +20,10 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-   describe 'GET /users/:id' do
-    before {get user_path(1)}
+  describe 'GET /users/:id' do
+    before { get user_path(1) }
     it 'returns a 200 status code' do
-      expect(response).to have_http_status(200) 
+      expect(response).to have_http_status(200)
     end
 
     it 'Should render show template' do
