@@ -85,6 +85,7 @@ main {
 
 .user-details {
   --gap: 3rem;
+
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
@@ -104,8 +105,8 @@ main {
 }
 
 .btn--center {
-  max-width: fit-content;
   margin-inline: auto;
+  max-width: 135px;
 }
 
 .post-header {
