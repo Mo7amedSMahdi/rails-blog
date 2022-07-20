@@ -13,3 +13,103 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --clr-white: #fff;
+  --clr-blue: #007bfc;
+  --clr-black: #212529;
+  --clr-turkwaz: #1ba2b9;
+  --clr-light-border: #1481fc;
+  --clr-red: #dd3646;
+  --clr-gray: #e1e1e1;
+
+  /* font families */
+  --ff-montserrat: 'Montserrat', sans-serif;
+  --ff-roboto-sl: 'Roboto Slab', serif;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-roboto-sl);
+  color: var(--clr-black);
+  scroll-behavior: smooth;
+  background: var(--clr-body);
+  padding-inline: 2rem;
+  padding-block: 1rem;
+}
+
+/* Utility classes */
+
+.hidden {
+  display: none !important;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+main {
+  padding: 2.313rem 6.25rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-details {
+  --gap: 3rem;
+
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  width: 100%;
+}
+
+.user-details h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.user-details p {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 5rem;
+}
+
+.btn--center {
+  margin-inline: auto;
+  max-width: 135px;
+}
+
+.post-header {
+  justify-content: space-between;
+  align-items: center;
+}
