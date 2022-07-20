@@ -1,1 +1,23 @@
-<h1>Show Post</h1>
+<div class="container flex flex--column">
+    <div class="card">
+            <div class="card-body flex flex--column">
+                <div class="post-header flex">
+                    <p>By <%= @post.author.name %></p>
+                    <div class="counter flex">
+                        <p>Comments: <%= @post.comments_counter %>,</p>
+                        <p>Likes: <%= @post.likes_counter %></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p><%= @post.text %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body flex flex--column">
+                <% @post.comment.each do |comment| %>
+                    <p><%= comment.author.name %>: <%= comment.text %></p>
+                <% end %>
+            </div>
+        </div>
+</div>

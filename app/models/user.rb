@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def self.three_most_recent_posts(author_id)
     Post.where(author_id:).order(created_at: :desc).limit(3).all
   end
+
+  def recent_posts
+    posts.order(created_at: :desc).limit(3)
+  end
 end
