@@ -68,6 +68,9 @@ end
 
 # Run against this stable release
 group :development, :test do
+  gem 'debase', '~> 0.2.5.beta2', require: false
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'ruby-debug-ide', require: false
+  gem 'solargraph', require: false
 end
