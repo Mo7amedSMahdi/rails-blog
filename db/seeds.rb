@@ -20,6 +20,7 @@ mohammed = User.create!(
     et maximus magna. Nulla vehicula convallis nulla.
     Duis arcu turpis, egestas ultrices est at, scelerisque lobortis est.',
     posts_counter: 0)
+    
    tom = User.create!(
     name: 'tom',
     photo: 'https://dummyimage.com/600x400/000/fff',

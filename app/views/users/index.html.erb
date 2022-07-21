@@ -1,5 +1,5 @@
 <section class='container flex flex--column'>
-   <% @users.each do |user| %>
-    <%= render partial: 'shared/single_user', locals: {user: user}%>
-    <% end %>
+    <% @users.each do |user| %>
+        <%= render partial: 'shared/single_user' , locals: {user: user}%>
+            <% end %>
 </section>

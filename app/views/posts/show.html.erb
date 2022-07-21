@@ -1,4 +1,9 @@
 <div class="container flex flex--column">
+<% flash.each do |type, msg| %>
+        <div class="alert alert-primary" role="alert">
+            <%= msg %>
+        </div>
+    <% end %>
     <div class="card">
             <div class="card-body flex flex--column">
                 <div class="post-header flex">
@@ -6,6 +11,7 @@
                     <div class="counter flex">
                         <p>Comments: <%= @post.comments_counter %>,</p>
                         <p>Likes: <%= @post.likes_counter %></p>
+                         <%= button_to "Like", user_post_likes_path(post_id: @post.id), params: { like: { post_id: @post.id } }, class: "btn btn-primary" %>
                     </div>
                 </div>
                 <div class="row">

@@ -1,4 +1,9 @@
 <section class="container flex flex--column">
+<% flash.each do |type, msg| %>
+    <div class="alert alert-primary" role="alert">
+        <%= msg %>
+    </div>
+<% end %>
     <div class="row">
         <%= render partial: "shared/single_user", locals: { user: @user } %>
     </div>
