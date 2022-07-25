@@ -3,24 +3,28 @@ require 'rails_helper'
 RSpec.describe 'user#Show', type: :feature do
   describe 'User' do
     before(:each) do
-       @mohammed = User.create!(
+      @mohammed = User.create!(
         name: 'mohammed',
-        photo: 'msMod.jpeg' ,
+        photo: 'msMod.jpeg',
         bio: 'Lorem ipsum dolor sit amet',
-        posts_counter: 0)
+        posts_counter: 0
+      )
 
       @tom = User.create!(
         name: 'tom',
-        photo: 'msMod.jpeg' ,
+        photo: 'msMod.jpeg',
         bio: 'Lorem ipsum dolor sit amet',
-        posts_counter: 0)
+        posts_counter: 0
+      )
 
       visit root_path
 
-      @post1 = mohammed.posts.create!(title: 'Ruby and Rails 1', text: 'this is first post about Ruby and Rails! 1', comments_counter: 0, likes_counter: 0)
-
-       post2 = mohammed.posts.create!(title: 'Ruby and Rails 2', text: 'this is first post about Ruby and Rails! 2', comments_counter: 0, likes_counter: 0)
-      post3 = mohammed.posts.create!(title: 'Ruby and Rails 3', text: 'this is first post about Ruby and Rails! 3', comments_counter: 0, likes_counter: 0)      
+      @post1 = mohammed.posts.create!(title: 'Ruby and Rails 1', text: 'this is first post about Ruby and Rails! 1',
+                                      comments_counter: 0, likes_counter: 0)
+      @post2 = mohammed.posts.create!(title: 'Ruby and Rails 2', text: 'this is first post about Ruby and Rails! 2',
+                                      comments_counter: 0, likes_counter: 0)
+      @post3 = mohammed.posts.create!(title: 'Ruby and Rails 3', text: 'this is first post about Ruby and Rails! 3',
+                                      comments_counter: 0, likes_counter: 0)
 
       visit user_path(@mohammed.id)
     end

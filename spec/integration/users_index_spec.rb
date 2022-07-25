@@ -4,16 +4,18 @@ RSpec.describe 'users#index', type: :feature do
   describe 'User' do
     before(:each) do
       @mohammed = User.create!(
-    name: 'mohammed',
-    photo: 'msMod.jpeg' ,
-    bio: 'Lorem ipsum dolor sit amet',
-    posts_counter: 0)
+        name: 'mohammed',
+        photo: 'msMod.jpeg',
+        bio: 'Lorem ipsum dolor sit amet',
+        posts_counter: 0
+      )
 
       @tom = User.create!(
-    name: 'tom',
-    photo: 'msMod.jpeg' ,
-    bio: 'Lorem ipsum dolor sit amet',
-    posts_counter: 0)
+        name: 'tom',
+        photo: 'msMod.jpeg',
+        bio: 'Lorem ipsum dolor sit amet',
+        posts_counter: 0
+      )
 
       visit root_path
     end
