@@ -9,7 +9,6 @@ RSpec.describe 'users#index', type: :feature do
     bio: 'Lorem ipsum dolor sit amet',
     posts_counter: 0)
 
-
       @tom = User.create!(
     name: 'tom',
     photo: 'msMod.jpeg' ,
