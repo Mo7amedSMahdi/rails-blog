@@ -74,3 +74,10 @@ group :development, :test do
   gem 'ruby-debug-ide', require: false
   gem 'solargraph', require: false
 end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
+  gem 'database_cleaner-active_record'
+  gem 'webdrivers'
+end
