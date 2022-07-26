@@ -19,7 +19,7 @@ mohammed = User.create!(
     in eleifend mauris eleifend. Donec at tempor libero,
     et maximus magna. Nulla vehicula convallis nulla.
     Duis arcu turpis, egestas ultrices est at, scelerisque lobortis est.',
-    posts_counter: 0)
+    posts_counter: 0, email: 'salah@bar.com', password: '123456')
     
    tom = User.create!(
     name: 'tom',
@@ -32,8 +32,32 @@ mohammed = User.create!(
     in eleifend mauris eleifend. Donec at tempor libero,
     et maximus magna. Nulla vehicula convallis nulla.
     Duis arcu turpis, egestas ultrices est at, scelerisque lobortis est.',
-    posts_counter: 0)
-
+    posts_counter: 0, email: 'salah1@bar.com', password: '123456')
+    
+#     name: 'mohammed',
+#     photo: 'https://dummyimage.com/600x400/000/fff' ,
+#     bio: 'Lorem ipsum dolor sit amet,
+#     consectetur adipiscing elit. Pellentesque nulla nunc, 
+#     lacinia sed volutpat ut, tristique et tortor. 
+#     Proin a nulla lorem. Duis ac nunc lectus. Ut non felis id elit tempor gravida.
+#     Aenean varius sem vel tellus elementum,
+#     in eleifend mauris eleifend. Donec at tempor libero,
+#     et maximus magna. Nulla vehicula convallis nulla.
+#     Duis arcu turpis, egestas ultrices est at, scelerisque lobortis est.',
+#     posts_counter: 0)
+    
+#    tom = User.create!(
+#     name: 'tom',
+#     photo: 'https://dummyimage.com/600x400/000/fff',
+#     bio: 'Lorem ipsum dolor sit amet,
+#     consectetur adipiscing elit. Pellentesque nulla nunc, 
+#     lacinia sed volutpat ut, tristique et tortor. 
+#     Proin a nulla lorem. Duis ac nunc lectus. Ut non felis id elit tempor gravida.
+#     Aenean varius sem vel tellus elementum,
+#     in eleifend mauris eleifend. Donec at tempor libero,
+#     et maximus magna. Nulla vehicula convallis nulla.
+#     Duis arcu turpis, egestas ultrices est at, scelerisque lobortis est.',
+#     posts_counter: 0)
    
    post1 = mohammed.posts.create!(title: 'Ruby and Rails 1', text: 'this is first post about Ruby and Rails! 1', comments_counter: 0, likes_counter: 0)
    post2 = mohammed.posts.create!(title: 'Ruby and Rails 2', text: 'this is first post about Ruby and Rails! 2', comments_counter: 0, likes_counter: 0)
