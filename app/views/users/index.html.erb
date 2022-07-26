@@ -1,5 +1,22 @@
 <section class='container flex flex--column'>
+
+    <% if current_user %>
+        <p>Hello, <%= current_user.name %>!</p>
+        <p>
+            You have successfully authenticated with devise account
+            You are now ready to interact with this blog application!
+        </p>
+    <% else %>
+        <p>
+            You are not signed in.
+            Please sign in to continue.
+            <%= link_to "Sign In", new_user_session_path %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+        </p>
+
+    <% end %>
+
     <% @users.each do |user| %>
         <%= render partial: 'shared/single_user' , locals: {user: user}%>
-            <% end %>
+    <% end %>
 </section>
