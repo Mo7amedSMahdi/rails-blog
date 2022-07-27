@@ -1,10 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
-  has_many :comment, foreign_key: 'post_id', dependent: :destroy
-  has_many :like, foreign_key: 'post_id', dependent: :destroy
+  has_many :comment
+  has_many :like
 
   after_save :update_post_counter
-  before_destroy :update_posts_counter_on_destroy
 
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, :likes_counter, comparison: { greater_than_or_equal_to: 0 }, numericality: true
@@ -28,12 +27,6 @@ class Post < ApplicationRecord
   def update_post_counter
     user = User.find(author.id)
     user.increment!(:posts_counter)
-    user.save
-  end
-
-  def update_posts_counter_on_destroy
-    user = User.find(author.id)
-    user.decrement!(:posts_counter)
     user.save
   end
 end
