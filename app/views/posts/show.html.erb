@@ -1,29 +1,32 @@
 <div class="container flex flex--column">
-<% flash.each do |type, msg| %>
-        <div class="alert alert-primary" role="alert">
-            <%= msg %>
+  <div class="card">
+    <div class="card-body flex flex--column">
+      <div class="post-header flex">
+        <p>By <%= @post.author.name %></p>
+        <div class="counter flex">
+          <p>Comments: <%= @post.comments_counter %>,</p>
+          <p>Likes: <%= @post.likes_counter %></p>
+          <%= button_to "Like", user_post_likes_path(post_id: @post.id), params: { like: { post_id: @post.id } }, class: "btn btn-primary" %>
         </div>
+      </div>
+      <div class="row">
+        <p><%= @post.text %></p>
+      </div>
+    </div>
+    <% if can? :destroy, @post %>
+      <div class="card-body">
+        <%= button_to "Delete Post", user_post_path(@post.author, @post), method: :delete, class: "btn btn-danger" %>
+      </div>
     <% end %>
-    <div class="card">
-            <div class="card-body flex flex--column">
-                <div class="post-header flex">
-                    <p>By <%= @post.author.name %></p>
-                    <div class="counter flex">
-                        <p>Comments: <%= @post.comments_counter %>,</p>
-                        <p>Likes: <%= @post.likes_counter %></p>
-                         <%= button_to "Like", user_post_likes_path(post_id: @post.id), params: { like: { post_id: @post.id } }, class: "btn btn-primary" %>
-                    </div>
-                </div>
-                <div class="row">
-                    <p><%= @post.text %></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body flex flex--column">
-                <% @post.comment.each do |comment| %>
-                    <p><%= comment.author.name %>: <%= comment.text %></p>
-                <% end %>
-            </div>
-        </div>
+  </div>
+  <div class="card">
+    <div class="card-body flex flex--column">
+      <% @post.comment.each do |comment| %>
+        <p><%= comment.author.name %>: <%= comment.text %></p>
+        <% if can? :destroy, comment %>
+          <%= button_to "Delete Comment", user_post_comment_path(@post.author, @post, comment), method: :delete, class: "btn btn-danger" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
